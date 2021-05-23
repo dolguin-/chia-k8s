@@ -4,9 +4,11 @@ metadata:
   name: chia-blockchain
 spec:
   ports:
-  - port: 8555
+  - name: 8555
+    port: 8555
     targetPort: 8555
-  - port: 8444
+  - name: 8555
+    port: 8444
     targetPort: 8444
   selector:
     app: chia-blockchain
