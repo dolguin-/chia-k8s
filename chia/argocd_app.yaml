@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: chia-blockchain
+  namespace: argocd
+spec:
+  source:
+    path: chia
+    repoURL: https://github.com/dolguin-/chia-k8s.git
+    targetRevision: HEAD
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: test
+  project: default
