@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chia-blockchain
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: chia-blockchain
+  template:
+    metadata:
+      labels:
+        app: chia-blockchain
+    spec:
+      containers:
+      - image: ghcr.io/chia-network/chia:latest
+        name: chia-blockchain
+        ports:
+        - containerPort: 8555
+        - containerPort: 8444
