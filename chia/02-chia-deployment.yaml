@@ -16,6 +16,9 @@ spec:
       containers:
       - image: ghcr.io/chia-network/chia:latest
         name: chia-blockchain
+        env:
+        - name: farmer
+          value: "true"
         ports:
         - containerPort: 8555
         - containerPort: 8444
